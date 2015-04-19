@@ -1,0 +1,84 @@
+{
+
+    "taxYear": "2014-2015",
+
+    "allowances": {
+        "personal": 10000,
+        "highEarnerThreshold": 100000,
+        "additional": {
+            "blind": 2230,
+            "ageRelated": {
+                "max": 27000,
+                "bands": [
+                    {
+                        "minAge": 65,
+                        "allowance": 10500
+                    },
+                    {
+                        "minAge": 75,
+                        "allowance": 10660
+                    }
+                ]
+            },
+            "marriedCouple": {
+                "minAge": 75,
+                "min": 3140,
+                "max": 8165,
+                "rate": 0.1
+            }
+        }
+    },
+
+    "tax": {
+        "basic": {
+            "rate": 0.2,
+            "min": 0,
+            "max": 31865
+        },
+        "higher": {
+            "rate": 0.4,
+            "min": 31865,
+            "max": 150000
+        },
+        "additional": {
+            "rate": 0.45,
+            "min": 150000
+        }
+    },
+
+    "nationalInsurance": {
+        "basic": {
+            "rate": 0.12,
+            "min": 7957,
+            "max": 41865
+        },
+        "higher": {
+            "rate": 0.02,
+            "min": 41866
+        }
+    },
+
+    "studentLoan": {
+        "thresholds": {
+            "p1": 16910,
+            "p2": 21000
+        },
+        "rate": 0.09
+    },
+
+    "minimumWage": [
+        {
+            "minAge": 0,
+            "minWage": 3.79
+        },
+        {
+            "minAge": 18,
+            "minWage": 5.13
+        },
+        {
+            "minAge": 21,
+            "minWage": 6.50
+        }
+    ]
+
+}

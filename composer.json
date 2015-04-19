@@ -1,0 +1,21 @@
+{
+    "name": "cabdesigns/salarybot-php",
+    "description": "A salary calculator for the UK tax system.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Bell",
+            "email": "info@cabdesigns.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "~4.6",
+        "mockery/mockery": "0.9.*",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "SalaryBotUk\\": "src/"
+        }
+    }
+}
