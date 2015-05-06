@@ -13,9 +13,33 @@ class NetIncomeCalculator
 
     /**
      * The employee's salary
-     * @var null
+     * @var Employee\Salary
      */
-    private $salary = null;
+    private $salary;
+
+    /**
+     * The tax calculator
+     * @var Calculator\TaxCalculator
+     */
+    private $taxCalculator;
+
+    /**
+     * The national insurance calculator
+     * @var Calculator\NationalInsuranceCalculator
+     */
+    private $nationalInsuranceCalculator;
+
+    /**
+     * The student loan calculator
+     * @var Calculator\StudentLoanCalculator
+     */
+    private $studentLoanCalculator;
+
+    /**
+     * The pension contribution calculator
+     * @var Calculator\PensionContribCalculator
+     */
+    private $pensionContribCalculator;
 
     /**
      * Constructor

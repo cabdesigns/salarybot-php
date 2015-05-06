@@ -13,21 +13,21 @@ class StudentLoanCalculator
 
     /**
      * The employee
-     * @var mixed
+     * @var Employee\Employee
      */
-    private $employee = null;
+    private $employee;
 
     /**
      * The employee's salary
-     * @var mixed
+     * @var Employee\Salary
      */
-    private $salary = null;
+    private $salary;
 
     /**
      * The student loan options available for this tax year
-     * @var null
+     * @var TaxYear\StudentLoan
      */
-    private $studentLoan = null;
+    private $studentLoan;
 
     /**
      * Constructor

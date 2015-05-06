@@ -25,9 +25,9 @@ class Employee
 
     /**
      * Employee's pension contribution
-     * @var integer
+     * @var float
      */
-    private $pensionContribution = 0;
+    private $pensionContribution = 0.0;
 
     /**
      * Employee's type of student loan
