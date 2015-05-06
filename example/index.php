@@ -68,7 +68,7 @@ echo 'Gross wage: &pound;' . $salary->getSalary() . ' per ' . $salary->getFreque
 
 echo '<h3>Income and allowances</h3>';
 echo 'Gross income: &pound;' . $salary->getGross('year') . '<br />';
-echo 'Base salary: &pound;' . $salary->getSalary('year') . '<br />';
+echo 'Base salary: &pound;' . $salary->getSalary() . '<br />';
 echo 'Annual bonus: &pound;' . $salary->getAnnualBonus() . '<br />';
 echo 'Other allowances: &pound;' . $salary->getAnnualAllowances() . '<br />';
 echo 'Personal allowance: &pound;' . $allowancesCalculator->calculate() . '<br />';
