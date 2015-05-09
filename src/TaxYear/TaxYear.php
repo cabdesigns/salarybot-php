@@ -49,14 +49,12 @@ class TaxYear
      */
     public function __construct($taxYear)
     {
-
         $this->taxYear = $taxYear->taxYear;
         $this->allowances = new Year\Allowances($taxYear->allowances);
         $this->taxBands = new Year\Bands($taxYear->tax);
         $this->nationalInsurance = new Year\Bands($taxYear->nationalInsurance);
         $this->studentLoan = new Year\StudentLoan($taxYear->studentLoan);
         $this->minimumWage = new Year\MinimumWage($taxYear->minimumWage);
-
     }
 
     /**
@@ -112,5 +110,4 @@ class TaxYear
     {
         return $this->minimumWage;
     }
-
 }

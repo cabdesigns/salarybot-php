@@ -85,7 +85,6 @@ class AllowancesCalculatorTest extends PHPUnit_Framework_TestCase
 
     public function testMarriedCouplesAllowance()
     {
-
         $this->salaryMock->shouldReceive('getGross')->andReturn(20000);
         $this->employeeMock->shouldReceive('getAge')->andReturn(75);
         $this->employeeMock->shouldReceive('isBlind')->andReturn(false);
@@ -102,7 +101,6 @@ class AllowancesCalculatorTest extends PHPUnit_Framework_TestCase
         $mca = $calculator->calculateMarriedCouplesAllowance();
 
         $this->assertEquals(816.5, $mca);
-
     }
 
     public function testReducedMarriedCouplesAllowance()
@@ -124,5 +122,4 @@ class AllowancesCalculatorTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(732.5, $mca);
     }
-
 }

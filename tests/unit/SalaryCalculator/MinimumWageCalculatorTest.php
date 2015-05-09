@@ -60,5 +60,4 @@ class MinimumWageCalculatorTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(true, $minimumWage);
     }
-
 }

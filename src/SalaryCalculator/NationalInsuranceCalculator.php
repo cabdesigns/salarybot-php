@@ -3,9 +3,7 @@
 namespace SalaryBotUk\SalaryCalculator;
 
 use SalaryBotUk\Employee as Employee;
-
 use SalaryBotUk\TaxYear as TaxYear;
-
 use SalaryBotUk\SalaryCalculator as Calculator;
 
 class NationalInsuranceCalculator extends Calculator\AbstractBandsCalculator
@@ -48,7 +46,6 @@ class NationalInsuranceCalculator extends Calculator\AbstractBandsCalculator
      */
     public function calculateBand($band)
     {
-
         $deductable = 0.0;
 
         if (!$this->employee->isPensioner()) {
@@ -56,7 +53,6 @@ class NationalInsuranceCalculator extends Calculator\AbstractBandsCalculator
         }
 
         return $deductable;
-
     }
 
     /**
@@ -67,5 +63,4 @@ class NationalInsuranceCalculator extends Calculator\AbstractBandsCalculator
     {
         return $this->salary->getGross('year');
     }
-
 }

@@ -139,7 +139,6 @@ class Salary
         }
 
         return $annualIncome;
-
     }
 
     /**
@@ -171,7 +170,6 @@ class Salary
         }
 
         return $frequencyIncome;
-
     }
 
     /**
@@ -245,5 +243,4 @@ class Salary
     {
         $this->annualAllowances = $annualAllowances;
     }
-
 }

@@ -1,6 +1,7 @@
 <?php
 
-class SalaryTest extends PHPUnit_Framework_TestCase {
+class SalaryTest extends PHPUnit_Framework_TestCase
+{
 
     public function setUp()
     {
@@ -146,5 +147,4 @@ class SalaryTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals(1000, $salary->getBase('hour'));
     }
-
 }

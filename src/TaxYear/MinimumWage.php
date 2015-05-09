@@ -2,7 +2,8 @@
 
 namespace SalaryBotUk\TaxYear;
 
-class MinimumWage {
+class MinimumWage
+{
 
     /**
      * Array of minimum wage band objects
@@ -27,5 +28,4 @@ class MinimumWage {
     {
         return $this->bands;
     }
-
 }

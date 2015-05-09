@@ -3,7 +3,6 @@
 namespace SalaryBotUk\SalaryCalculator;
 
 use SalaryBotUk\Employee as Employee;
-
 use SalaryBotUk\SalaryCalculator as Calculator;
 
 class PensionContribCalculator
@@ -43,6 +42,4 @@ class PensionContribCalculator
         $pension = ($grossSalary / 100) * $pensionPercent;
         return $pension;
     }
-
 }
-

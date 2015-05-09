@@ -3,9 +3,7 @@
 namespace SalaryBotUk\SalaryCalculator;
 
 use SalaryBotUk\Employee as Employee;
-
 use SalaryBotUk\TaxYear as TaxYear;
-
 use SalaryBotUk\SalaryCalculator as Calculator;
 
 class MinimumWageCalculator
@@ -48,7 +46,6 @@ class MinimumWageCalculator
      */
     public function calculate()
     {
-
         $age = $this->employee->getAge();
 
         if (!is_int($age)) {
@@ -71,5 +68,4 @@ class MinimumWageCalculator
 
         return $isPaidMinimumWage;
     }
-
 }

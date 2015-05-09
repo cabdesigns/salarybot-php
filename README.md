@@ -9,4 +9,3 @@ A salary calculator for the UK tax system. Currently unstable.
 * Ensure consistent naming
 * Need helper method to convert generic values to monthly/week/daily/hourly
 * Ensure consistency with constructors/setters
-* Ensure PSR

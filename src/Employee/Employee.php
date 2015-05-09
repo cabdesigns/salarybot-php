@@ -196,5 +196,4 @@ class Employee
     {
         $this->pensioner = $isPensioner;
     }
-
 }

@@ -3,7 +3,6 @@
 namespace SalaryBotUk\SalaryCalculator;
 
 use SalaryBotUk\Employee as Employee;
-
 use SalaryBotUk\TaxYear as TaxYear;
 
 abstract class AbstractBandsCalculator
@@ -63,22 +62,15 @@ abstract class AbstractBandsCalculator
         }
 
         if ($income > $bandMin) {
-
             if ($bandMax && $income > $bandMax) {
-
                 $incomeWithinBand = $bandMax - $bandMin;
-
             } else {
-
                 $incomeWithinBand = $income - $bandMin;
-
             }
 
             $deductable = $incomeWithinBand * $bandRate;
-
         }
 
         return $deductable;
     }
-
 }

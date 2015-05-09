@@ -4,7 +4,7 @@ class AllowancesTest extends PHPUnit_Framework_TestCase
 
     public function testPersonalAllowance()
     {
-    	$data = $this->getStub();
+        $data = $this->getStub();
         $allowances = new \SalaryBotUk\TaxYear\Allowances($data);
         $this->assertEquals(10000, $allowances->getPersonalAllowance());
     }
@@ -85,5 +85,4 @@ class AllowancesTest extends PHPUnit_Framework_TestCase
         $stub = json_decode(file_get_contents($stubFile));
         return $stub->allowances;
     }
-
 }

@@ -4,7 +4,7 @@ class MinimumWageTest extends PHPUnit_Framework_TestCase
 
     public function testMinimumWage()
     {
-    	$data = $this->getStub();
+        $data = $this->getStub();
         $minimumWage = new \SalaryBotUk\TaxYear\MinimumWage($data);
         $bands = $minimumWage->getBands();
         $firstBandAge = $bands[0]->minAge;
@@ -19,5 +19,4 @@ class MinimumWageTest extends PHPUnit_Framework_TestCase
         $stub = json_decode(file_get_contents($stubFile));
         return $stub->minimumWage;
     }
-
 }

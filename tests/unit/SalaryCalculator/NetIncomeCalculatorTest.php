@@ -16,7 +16,7 @@ class SalaryCalculatorTest extends PHPUnit_Framework_TestCase
 
     public function setCalculatorValues($tax, $ni, $studentLoan, $pensionContrib)
     {
-    	$this->taxCalculatorMock->shouldReceive('calculate')->once()->andReturn($tax);
+        $this->taxCalculatorMock->shouldReceive('calculate')->once()->andReturn($tax);
         $this->niCalculatorMock->shouldReceive('calculate')->once()->andReturn($ni);
         $this->studentLoanCalculatorMock->shouldReceive('calculate')->once()->andReturn($studentLoan);
         $this->pensionContribCalculatorMock->shouldReceive('calculate')->once()->andReturn($pensionContrib);
@@ -24,10 +24,10 @@ class SalaryCalculatorTest extends PHPUnit_Framework_TestCase
 
     public function setCalculatorDeps($parentCalculator)
     {
-    	$parentCalculator->setTaxCalculator($this->taxCalculatorMock);
-    	$parentCalculator->setNationalInsuranceCalculator($this->niCalculatorMock);
-    	$parentCalculator->setStudentLoanCalculator($this->studentLoanCalculatorMock);
-    	$parentCalculator->setPensionContribCalculator($this->pensionContribCalculatorMock);
+        $parentCalculator->setTaxCalculator($this->taxCalculatorMock);
+        $parentCalculator->setNationalInsuranceCalculator($this->niCalculatorMock);
+        $parentCalculator->setStudentLoanCalculator($this->studentLoanCalculatorMock);
+        $parentCalculator->setPensionContribCalculator($this->pensionContribCalculatorMock);
     }
 
     public function testNetIncome()
@@ -41,5 +41,4 @@ class SalaryCalculatorTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(20000, $netIncome);
     }
-
 }

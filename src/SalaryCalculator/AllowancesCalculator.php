@@ -3,9 +3,7 @@
 namespace SalaryBotUk\SalaryCalculator;
 
 use SalaryBotUk\Employee as Employee;
-
 use SalaryBotUk\TaxYear as TaxYear;
-
 use SalaryBotUk\SalaryCalculator as Calculator;
 
 class AllowancesCalculator
@@ -99,7 +97,6 @@ class AllowancesCalculator
      */
     private function reduceHighEarnings($personalAllowance = 0.0)
     {
-
         if (!$this->isHighEarner()) {
             return $personalAllowance;
         }
@@ -135,7 +132,6 @@ class AllowancesCalculator
         $minAge = $this->allowances->getMarriageAllowanceMinAge();
 
         if ($age >= $minAge && $isMarried) {
-
             $gross = $this->salary->getGross('year');
             $ageAllowanceThreshold = $this->allowances->getAgeAllowanceThreshold();
 
@@ -161,5 +157,4 @@ class AllowancesCalculator
 
         return $mca;
     }
-
 }

@@ -2,7 +2,8 @@
 
 namespace SalaryBotUk\TaxYear;
 
-class Bands {
+class Bands
+{
 
     /**
      * Array of bands
@@ -14,7 +15,8 @@ class Bands {
      * Set the bands
      * @param mixed
      */
-    public function __construct($bands) {
+    public function __construct($bands)
+    {
         $this->bands = $bands;
     }
 
@@ -23,7 +25,8 @@ class Bands {
      * @param  string
      * @return mixed
      */
-    private function getBand($bandId) {
+    private function getBand($bandId)
+    {
         return !empty($this->bands->$bandId) ? $this->bands->$bandId : null;
     }
 
@@ -32,7 +35,8 @@ class Bands {
      * @param  string
      * @return float
      */
-    public function getRate($bandId) {
+    public function getRate($bandId)
+    {
         $band = $this->getBand($bandId);
         return $band ? $band->rate : 0.00;
     }
@@ -42,7 +46,8 @@ class Bands {
      * @param  string
      * @return float
      */
-    public function getMin($bandId) {
+    public function getMin($bandId)
+    {
         $band = $this->getBand($bandId);
         return $band ? $band->min : 0.00;
     }
@@ -52,9 +57,9 @@ class Bands {
      * @param  string
      * @return float
      */
-    public function getMax($bandId) {
+    public function getMax($bandId)
+    {
         $band = $this->getBand($bandId);
         return $band ? $band->max : 0.00;
     }
-
 }

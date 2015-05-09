@@ -3,9 +3,7 @@
 namespace SalaryBotUk\SalaryCalculator;
 
 use SalaryBotUk\Employee as Employee;
-
 use SalaryBotUk\TaxYear as TaxYear;
-
 use SalaryBotUk\SalaryCalculator as Calculator;
 
 class NetIncomeCalculator
@@ -103,6 +101,4 @@ class NetIncomeCalculator
     {
         $this->pensionContribCalculator = $pensionContribCalculator;
     }
-
 }
-

@@ -1,6 +1,7 @@
 <?php
 
-class EmployeeTest extends PHPUnit_Framework_TestCase {
+class EmployeeTest extends PHPUnit_Framework_TestCase
+{
 
     public function testDaysPerWeek()
     {
@@ -57,5 +58,4 @@ class EmployeeTest extends PHPUnit_Framework_TestCase {
         $employee->setPensioner(true);
         $this->assertEquals(true, $employee->isPensioner());
     }
-
 }

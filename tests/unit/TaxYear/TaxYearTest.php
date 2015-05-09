@@ -1,5 +1,6 @@
 <?php
-class TaxYearTest extends PHPUnit_Framework_TestCase {
+class TaxYearTest extends PHPUnit_Framework_TestCase
+{
 
     public function setUp()
     {
@@ -43,5 +44,4 @@ class TaxYearTest extends PHPUnit_Framework_TestCase {
         $taxYear = new \SalaryBotUk\TaxYear\TaxYear($this->taxYearStub);
         $this->assertInstanceOf('\SalaryBotUk\TaxYear\MinimumWage', $taxYear->getMinimumWage());
     }
-
 }

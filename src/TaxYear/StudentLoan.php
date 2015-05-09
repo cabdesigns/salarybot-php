@@ -2,12 +2,13 @@
 
 namespace SalaryBotUk\TaxYear;
 
-class StudentLoan {
+class StudentLoan
+{
 
-	/**
-	 * The student loan repayment rate
-	 * @var float
-	 */
+    /**
+     * The student loan repayment rate
+     * @var float
+     */
     private $rate = 0.0;
 
     /**
@@ -20,17 +21,19 @@ class StudentLoan {
      * Set the student loan
      * @param mixed
      */
-    public function __construct($studentLoan) {
-    	$this->rate = $studentLoan->rate;
-    	$this->thresholds = $studentLoan->thresholds;
+    public function __construct($studentLoan)
+    {
+        $this->rate = $studentLoan->rate;
+        $this->thresholds = $studentLoan->thresholds;
     }
 
     /**
      * Get the student loan repayment rate
      * @return float
      */
-    public function getRate() {
-    	return $this->rate;
+    public function getRate()
+    {
+        return $this->rate;
     }
 
     /**
@@ -39,12 +42,12 @@ class StudentLoan {
      * @return float
      * @throws Exception
      */
-    public function getThreshold($studentLoanType) {
-    	if (isset($this->thresholds->$studentLoanType)) {
-    		return $this->thresholds->$studentLoanType;
-    	} else {
-    		throw new \Exception("Invalid student loan type specified.", 1);
-    	}
+    public function getThreshold($studentLoanType)
+    {
+        if (isset($this->thresholds->$studentLoanType)) {
+            return $this->thresholds->$studentLoanType;
+        } else {
+            throw new \Exception("Invalid student loan type specified.", 1);
+        }
     }
-
 }

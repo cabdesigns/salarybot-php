@@ -2,7 +2,8 @@
 
 namespace SalaryBotUk\TaxYear;
 
-class Allowances {
+class Allowances
+{
 
     /**
      * Personal allowance
@@ -162,5 +163,4 @@ class Allowances {
     {
         return $this->getMarriageAllowance()->rate;
     }
-
 }

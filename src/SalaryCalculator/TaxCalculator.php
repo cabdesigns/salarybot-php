@@ -56,5 +56,4 @@ class TaxCalculator extends Calculator\AbstractBandsCalculator
     {
         $this->allowancesCalculator = $allowancesCalculator;
     }
-
 }
