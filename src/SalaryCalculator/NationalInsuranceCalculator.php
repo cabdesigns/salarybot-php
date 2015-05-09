@@ -8,7 +8,7 @@ use SalaryBotUk\TaxYear as TaxYear;
 
 use SalaryBotUk\SalaryCalculator as Calculator;
 
-class NationalInsuranceCalculator  extends Calculator\AbstractBandsCalculator
+class NationalInsuranceCalculator extends Calculator\AbstractBandsCalculator
 {
 
     /**
