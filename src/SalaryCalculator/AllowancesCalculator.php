@@ -61,9 +61,9 @@ class AllowancesCalculator
      */
     public function calculateByAge()
     {
-    	$age = $this->employee->getAge();
+        $age = $this->employee->getAge();
         $gross = $this->salary->getGross('year');
-    	$personalAllowance = $this->allowances->getPersonalAllowance();
+        $personalAllowance = $this->allowances->getPersonalAllowance();
         $ageAllowance = $this->allowances->getAgeBandAllowance($age);
         $ageAllowanceThreshold = $this->allowances->getAgeAllowanceThreshold();
 
@@ -74,7 +74,7 @@ class AllowancesCalculator
 
         $personalAllowance = ($ageAllowance > $personalAllowance) ? $ageAllowance : $personalAllowance;
 
-    	return $personalAllowance;
+        return $personalAllowance;
     }
 
     /**
@@ -86,7 +86,7 @@ class AllowancesCalculator
         $allowance = 0.0;
 
         if ($this->employee->isBlind()) {
-        	$allowance = $this->allowances->getBlindAllowance();
+            $allowance = $this->allowances->getBlindAllowance();
         }
 
         return $allowance;
