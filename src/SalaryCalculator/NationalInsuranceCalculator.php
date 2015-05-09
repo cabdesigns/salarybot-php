@@ -8,38 +8,25 @@ use SalaryBotUk\TaxYear as TaxYear;
 
 use SalaryBotUk\SalaryCalculator as Calculator;
 
-class NationalInsuranceCalculator
+class NationalInsuranceCalculator  extends Calculator\AbstractBandsCalculator
 {
 
     /**
      * The employee
-     * @var mixed
+     * @var Employee\Employee
      */
-    private $employee = null;
-
-    /**
-     * The employee's salary
-     * @var mixed
-     */
-    private $salary = null;
-
-    /**
-     * National insurance bands for the tax year
-     * @var mixed
-     */
-    private $niBands = null;
+    private $employee;
 
     /**
      * Constructor
      * @param Employee\Employee         $employee
      * @param Employee\Salary           $salary
-     * @param TaxYear\Bands $niBands
+     * @param TaxYear\Bands $bands
      */
-    public function __construct(Employee\Employee $employee, Employee\Salary $salary, TaxYear\Bands $niBands)
+    public function __construct(Employee\Employee $employee, Employee\Salary $salary, TaxYear\Bands $bands)
     {
         $this->employee = $employee;
-        $this->salary = $salary;
-        $this->niBands = $niBands;
+        parent::__construct($salary, $bands);
     }
 
     /**
@@ -56,40 +43,29 @@ class NationalInsuranceCalculator
 
     /**
      * Calculate the national insurance owed for the specified band
-     * @param  string $niBand
+     * @param  string $band
      * @return float
      */
-    public function calculateBand($niBand)
+    public function calculateBand($band)
     {
 
         $deductable = 0.0;
-        $income = $this->salary->getGross('year');
 
-        $bandRate = $this->niBands->getRate($niBand);
-        $bandMin = $this->niBands->getMin($niBand);
-        $bandMax = $this->niBands->getMax($niBand);
-
-        if ($this->employee->isPensioner() || !$bandRate) {
-            return $deductable;
-        }
-
-        if ($income > $bandMin) {
-
-            if ($bandMax && $income > $bandMax) {
-
-                $incomeWithinBand = $bandMax - $bandMin;
-
-            } else {
-
-                $incomeWithinBand = $income - $bandMin;
-
-            }
-
-            $deductable = $incomeWithinBand * $bandRate;
-
+        if (!$this->employee->isPensioner()) {
+            $deductable = parent::calculateBand($band);
         }
 
         return $deductable;
+
+    }
+
+    /**
+     * Get the source of income to make deducations against
+     * @return float
+     */
+    protected function getDeductableIncome()
+    {
+        return $this->salary->getGross('year');
     }
 
 }
