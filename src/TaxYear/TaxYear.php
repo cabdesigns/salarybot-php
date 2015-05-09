@@ -15,33 +15,33 @@ class TaxYear
 
     /**
      * Personal allowances for the tax year
-     * @var mixed
+     * @var \SalaryBotUk\TaxYear\Allowances
      */
-    private $allowances = null;
+    private $allowances;
 
     /**
      * Tax bands
-     * @var mixed
+     * @var \SalaryBotUk\TaxYear\Bands
      */
-    private $taxBands = null;
+    private $taxBands;
 
     /**
      * National insurance rates
-     * @var mixed
+     * @var \SalaryBotUk\TaxYear\Bands
      */
-    private $nationalInsurance = null;
+    private $nationalInsurance;
 
     /**
      * Student loan rates
-     * @var mixed
+     * @var \SalaryBotUk\TaxYear\StudentLoan
      */
-    private $studentLoan = null;
+    private $studentLoan;
 
     /**
      * Minimum wage rates
-     * @var mixed
+     * @var \SalaryBotUk\TaxYear\MinimumWage
      */
-    private $minimumWage = null;
+    private $minimumWage;
 
     /**
      * Set the values for the tax year
@@ -52,8 +52,8 @@ class TaxYear
 
         $this->taxYear = $taxYear->taxYear;
         $this->allowances = new Year\Allowances($taxYear->allowances);
-        $this->taxBands = new Year\TaxBands($taxYear->tax);
-        $this->nationalInsurance = new Year\NationalInsurance($taxYear->nationalInsurance);
+        $this->taxBands = new Year\Bands($taxYear->tax);
+        $this->nationalInsurance = new Year\Bands($taxYear->nationalInsurance);
         $this->studentLoan = new Year\StudentLoan($taxYear->studentLoan);
         $this->minimumWage = new Year\MinimumWage($taxYear->minimumWage);
 
@@ -79,7 +79,7 @@ class TaxYear
 
     /**
      * Return the tax bands
-     * @return \SalaryBotUk\TaxYear\TaxBands
+     * @return \SalaryBotUk\TaxYear\Bands
      */
     public function getTaxBands()
     {
@@ -88,7 +88,7 @@ class TaxYear
 
     /**
      * Return the national insurance
-     * @return \SalaryBotUk\TaxYear\NationalInsurance
+     * @return \SalaryBotUk\TaxYear\Bands
      */
     public function getNationalInsurance()
     {

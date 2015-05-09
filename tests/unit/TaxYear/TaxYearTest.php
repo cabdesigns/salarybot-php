@@ -23,13 +23,13 @@ class TaxYearTest extends PHPUnit_Framework_TestCase {
     public function testTaxSet()
     {
         $taxYear = new \SalaryBotUk\TaxYear\TaxYear($this->taxYearStub);
-        $this->assertInstanceOf('\SalaryBotUk\TaxYear\TaxBands', $taxYear->getTaxBands());
+        $this->assertInstanceOf('\SalaryBotUk\TaxYear\Bands', $taxYear->getTaxBands());
     }
 
     public function testNISet()
     {
         $taxYear = new \SalaryBotUk\TaxYear\TaxYear($this->taxYearStub);
-        $this->assertInstanceOf('\SalaryBotUk\TaxYear\NationalInsurance', $taxYear->getNationalInsurance());
+        $this->assertInstanceOf('\SalaryBotUk\TaxYear\Bands', $taxYear->getNationalInsurance());
     }
 
     public function testStudentLoanSet()

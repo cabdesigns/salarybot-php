@@ -1,22 +1,22 @@
 <?php
-class TaxBandsTest extends PHPUnit_Framework_TestCase {
+class BandsTest extends PHPUnit_Framework_TestCase {
 
     public function testTaxBandRate() {
         $data = $this->getStub();
-        $taxBands = new \SalaryBotUk\TaxYear\TaxBands($data);
-        $this->assertEquals(0.4, $taxBands->getRate('higher'));
+        $bands = new \SalaryBotUk\TaxYear\Bands($data);
+        $this->assertEquals(0.4, $bands->getRate('higher'));
     }
 
     public function testTaxBandMin() {
     	$data = $this->getStub();
-        $taxBands = new \SalaryBotUk\TaxYear\TaxBands($data);
-        $this->assertEquals(31865, $taxBands->getMin('higher'));
+        $bands = new \SalaryBotUk\TaxYear\Bands($data);
+        $this->assertEquals(31865, $bands->getMin('higher'));
     }
 
     public function testTaxBandMax() {
         $data = $this->getStub();
-        $taxBands = new \SalaryBotUk\TaxYear\TaxBands($data);
-        $this->assertEquals(150000, $taxBands->getMax('higher'));
+        $bands = new \SalaryBotUk\TaxYear\Bands($data);
+        $this->assertEquals(150000, $bands->getMax('higher'));
     }
 
     public function getStub() {
