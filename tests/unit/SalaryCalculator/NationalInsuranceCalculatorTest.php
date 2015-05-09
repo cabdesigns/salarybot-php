@@ -9,7 +9,7 @@ class NationalInsuranceCalculatorTest extends PHPUnit_Framework_TestCase
     {
         $this->employeeMock = \Mockery::mock('\SalaryBotUk\Employee\Employee');
         $this->salaryMock = \Mockery::mock('\SalaryBotUk\Employee\Salary');
-        $this->niMock = \Mockery::mock('\SalaryBotUk\TaxYear\NationalInsurance');
+        $this->niMock = \Mockery::mock('\SalaryBotUk\TaxYear\Bands');
     }
 
     public function mockNiBand($name, $rate = 0, $min = 0, $max = 0)

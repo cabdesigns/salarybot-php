@@ -31,10 +31,10 @@ class TaxCalculator
 
     /**
      * Constructor
-     * @param Employee\Salary  $salary   [description]
-     * @param TaxYear\TaxBands $taxBands [description]
+     * @param Employee\Salary  $salary
+     * @param TaxYear\Bands $taxBands
      */
-    public function __construct(Employee\Salary $salary, TaxYear\TaxBands $taxBands)
+    public function __construct(Employee\Salary $salary, TaxYear\Bands $taxBands)
     {
         $this->salary = $salary;
         $this->taxBands = $taxBands;

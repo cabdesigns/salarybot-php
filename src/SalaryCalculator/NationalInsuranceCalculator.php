@@ -33,9 +33,9 @@ class NationalInsuranceCalculator
      * Constructor
      * @param Employee\Employee         $employee
      * @param Employee\Salary           $salary
-     * @param TaxYear\NationalInsurance $niBands
+     * @param TaxYear\Bands $niBands
      */
-    public function __construct(Employee\Employee $employee, Employee\Salary $salary, TaxYear\NationalInsurance $niBands)
+    public function __construct(Employee\Employee $employee, Employee\Salary $salary, TaxYear\Bands $niBands)
     {
         $this->employee = $employee;
         $this->salary = $salary;

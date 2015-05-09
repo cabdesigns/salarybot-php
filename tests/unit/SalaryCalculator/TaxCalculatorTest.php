@@ -8,7 +8,7 @@ class TaxCalculatorTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->salaryMock = \Mockery::mock('\SalaryBotUk\Employee\Salary');
-        $this->taxBandsMock = \Mockery::mock('\SalaryBotUk\TaxYear\TaxBands');
+        $this->taxBandsMock = \Mockery::mock('\SalaryBotUk\TaxYear\Bands');
         $this->allowancesCalculatorMock = \Mockery::mock('\SalaryBotUk\SalaryCalculator\AllowancesCalculator');
     }
 
