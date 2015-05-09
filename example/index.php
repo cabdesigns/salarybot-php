@@ -4,7 +4,7 @@ require_once('../vendor/autoload.php');
 
 use SalaryBotUk\Employee as Employee;
 use SalaryBotUk\TaxYear as TaxYear;
-use SalaryBotUk\SalaryCalculator as Calculator;
+use SalaryBotUk\SalaryCalculator as SalaryCalculator;
 
 // Setup tax year
 $taxYearData = json_decode(file_get_contents('../tests/stubs/tax-year.json'));
@@ -34,16 +34,16 @@ $salary->setAnnualAllowances(0);
 $salary->setFrequency(Employee\Salary::FREQ_YEAR);
 
 // Setup calculators
-$allowancesCalculator = new Calculator\AllowancesCalculator($employee, $salary, $allowances);
-$minimumWageCalculator = new Calculator\MinimumWageCalculator($employee, $salary, $minimumWage);
-$niCalculator = new Calculator\NationalInsuranceCalculator($employee, $salary, $niBands);
-$pensionContribCalculator = new Calculator\PensionContribCalculator($employee, $salary);
-$studentLoanCalculator = new Calculator\StudentLoanCalculator($employee, $salary, $studentLoan);
+$allowancesCalculator = new SalaryCalculator\AllowancesCalculator($employee, $salary, $allowances);
+$minimumWageCalculator = new SalaryCalculator\MinimumWageCalculator($employee, $salary, $minimumWage);
+$niCalculator = new SalaryCalculator\NationalInsuranceCalculator($employee, $salary, $niBands);
+$pensionContribCalculator = new SalaryCalculator\PensionContribCalculator($employee, $salary);
+$studentLoanCalculator = new SalaryCalculator\StudentLoanCalculator($employee, $salary, $studentLoan);
 
-$taxCalculator = new Calculator\TaxCalculator($salary, $taxBands);
+$taxCalculator = new SalaryCalculator\TaxCalculator($salary, $taxBands);
 $taxCalculator->setAllowancesCalculator($allowancesCalculator);
 
-$netIncomeCalculator = new Calculator\NetIncomeCalculator($salary);
+$netIncomeCalculator = new SalaryCalculator\NetIncomeCalculator($salary);
 $netIncomeCalculator->setTaxCalculator($taxCalculator);
 $netIncomeCalculator->setNationalInsuranceCalculator($niCalculator);
 $netIncomeCalculator->setPensionContribCalculator($pensionContribCalculator);
